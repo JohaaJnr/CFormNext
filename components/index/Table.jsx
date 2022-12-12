@@ -41,7 +41,7 @@ const Table = (props) => {
               {
                     props.m.map(e=>{
                         return(
-                            <tr id={e._id}>
+                            <tr key={e._id}>
                                 <th scope="row">*</th>
                                 <td>{e.sender_name}</td>
                                 <td>{e.sender_email}</td>
