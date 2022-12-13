@@ -1,6 +1,6 @@
 import User from "../../model/User"
 import bcrypt from 'bcrypt'
-import dbConnect from "../../utils/db"
+
 
 const jwt = require('jsonwebtoken')
 
@@ -11,7 +11,7 @@ export default async function Login(req,res){
         const { method } = req
         if(method === 'POST'){
             const formData = req.body
-            dbConnect()
+          
             const user = await User.findOne({ email: formData.email })
             if(!user){
                 res.json({
